@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="55x55" href="static\logos.png">
+    <title>Login - Agriculture Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Add your additional CSS styling here */
+        .create-account-link {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 20px 0;
+            display: inline-block;
+            margin-left: 190px;
+        }
+        
+        .create-account-link:hover {
+            text-decoration: underline;
+        }
+        .create-account-form {
+            display: none;
+            margin-top: 20px;
+        }
+        .active {
+            display: block;
+        }
+        .login-form {
+            display: none;
+        }
+        .login-form.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <ul class="navbar">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('dashboard') }}">My Dashboard</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <img src="{{ url_for('static', filename='logos.png') }}" alt="Logo" class="nav-logo">
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="tabs">
+            <button id="dealer-login-tab" class="active">Dealer Login</button>
+            <button id="user-login-tab">User Login</button>
+        </div>
+
+        <div id="dealer-login" class="login-form active">
+            <form id="dealer-login-form" method="POST" action="{{ url_for('login') }}">
+                <input type="hidden" name="login_type" value="dealer">
+                <label for="dealer-username">Username:</label>
+                <input type="text" id="dealer-username" name="username" required>
+
+                <label for="dealer-password">Password:</label>
+                <input type="password" id="dealer-password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p><a href="#" class="create-account-link" data-account-type="dealer">Create a Dealer Account</a></p>
+        </div>
+
+        <div id="user-login" class="login-form">
+            <form id="user-login-form" method="POST" action="{{ url_for('login') }}">
+                <input type="hidden" name="login_type" value="user">
+                <label for="user-username">Username:</label>
+                <input type="text" id="user-username" name="username" required>
+
+                <label for="user-password">Password:</label>
+                <input type="password" id="user-password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p><a href="#" class="create-account-link" data-account-type="user">Create a User Account</a></p>
+        </div>
+
+        <p id="login-message">{{ get_flashed_messages()|join(', ') }}</p>
+
+        <!-- Create Account Form -->
+        <div id="create-account" class="create-account-form">
+            <h2>Create Account</h2>
+            <form id="create-account-form" method="POST" action="{{ url_for('create_account') }}">
+                <input type="hidden" id="account-type" name="profile_type" value="">
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="username" required>
+
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+
+                <label for="terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the Terms & Conditions
+                </label>
+
+                <button type="submit">Create Account</button>
+            </form>
+            <br>
+            <button id="cancel-create-account">Cancel</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Agriculture World. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        document.querySelectorAll('.create-account-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('create-account').style.display = 'block';
+                document.getElementById('account-type').value = this.getAttribute('data-account-type');
+                document.querySelector('.login-form.active').classList.remove('active');
+                document.querySelector('.tabs .active').classList.remove('active');
+            });
+        });
+
+        document.getElementById('dealer-login-tab').addEventListener('click', function() {
+            document.getElementById('dealer-login').classList.add('active');
+            document.getElementById('user-login').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('user-login-tab').classList.remove('active');
+        });
+
+        document.getElementById('user-login-tab').addEventListener('click', function() {
+            document.getElementById('user-login').classList.add('active');
+            document.getElementById('dealer-login').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('dealer-login-tab').classList.remove('active');
+        });
+
+        document.getElementById('cancel-create-account').addEventListener('click', function() {
+            document.getElementById('create-account').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
