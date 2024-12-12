@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Dashboard - Agriculture Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboards.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Dealer Profile Section -->
+        <div class="profile-section">
+            <h2>Welcome, {{ dealer_profile['full_name'] }}</h2>
+            <img src="{{ url_for('static', filename=dealer_profile['profile_picture']) }}" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <div class="info-item">
+                    <strong>Email:</strong>
+                    <p>{{ dealer_profile['email'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Phone:</strong>
+                    <p>{{ dealer_profile['phone'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Organization Name:</strong>
+                    <p>{{ dealer_profile['organization_name'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Organization Address:</strong>
+                    <p>{{ dealer_profile['organization_address'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Location:</strong>
+                    <p>{{ dealer_profile['location'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Business Type:</strong>
+                    <p>{{ dealer_profile['business_type'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Products Interested:</strong>
+                    <p>{{ dealer_profile['products_interested'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Products Rate:</strong>
+                    <p>{{ dealer_profile['products_rate'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>GSTIN No:</strong>
+                    <p>{{ dealer_profile['gst_no'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Certified Documents:</strong>
+                    <p><a href="{{ url_for('static', filename=dealer_profile['certified_documents']) }}" class="view-document">View Documents</a></p>
+                </div>
+            </div>
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>
+
+        <!-- User Profiles Section -->
+        <div class="dealer-section">
+            <h3 class="section-title">Available Users</h3>
+            {% for user in users %}
+            <div class="dealer-profile-card">
+                <img src="{{ url_for('static', filename=user['profile_picture'] if user['profile_picture'] else 'uploads/default.png') }}" alt="User Picture">
+                <div class="details">
+                    <p><strong>User Name:</strong> {{ user['full_name'] }}</p>
+                    <p><strong>Farm Size:</strong> {{ user['farm_size'] }}</p>
+                    <p><strong>Products Available:</strong> {{ user['products'] }}</p>
+                    <p><strong>Products Rate:</strong> {{ user['products_rate'] }}</p>
+                </div>
+                <a href="#" class="view-more" data-user-id="{{ user['username'] }}">View More</a>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Agriculture World. All rights reserved.</p>
+    </footer>
+
+    <!-- Popup Structure -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <div class="user-details">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+            <a href="#" class="buy-button">Buy</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

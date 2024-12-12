@@ -1,0 +1,634 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header and Navigation Styles */
+header {
+    background: #4CAF50; /* Green background */
+    color: white;
+    padding: 1rem 0;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #FFD700; /* Gold color on hover */
+    text-decoration:underline;
+}
+header {
+    background: #4CAF50; /* Green background */
+    color: white;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Optional: Add padding to give space on the sides */
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Allow navbar to take up available space */
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-logo {
+    height: 55px;
+    width: 65px;
+    float: left;
+}
+
+
+/* Hero Section Styles */
+.hero-section {
+    background: url('path/to/your/farmer-background.jpg') no-repeat center center/cover;
+    height: 100vh;              /* Full viewport height */
+    display: flex;             /* Flexbox for centering content */
+    align-items: center;       /* Center horizontally */
+    justify-content: center;   /* Center vertically */
+    text-align: center;        /* Center text alignment */
+    color: white;              /* Text color */
+    position: relative;        /* Position for absolute child elements */
+    overflow: hidden;          /* Hide overflow content */
+}
+
+/* Background animation */
+@keyframes slide {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;        /* Cover entire section */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    animation: slide 10s linear infinite; /* Background sliding effect */
+    z-index: 1;                /* Place it behind text content */
+}
+
+/* Styling for h1 within hero section */
+.hero-section h1 {
+    font-size: 3rem;           /* Large font size */
+    z-index: 2;                /* Ensure text is above overlay */
+    margin: 0;                 /* Remove default margins */
+    animation: fadeIn 3s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+/* Centering and animation */
+.centered {
+    position: absolute;        /* Position relative to hero section */
+    top: 50%;                  /* Center vertically */
+    left: 50%;                 /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element’s own dimensions */
+    z-index: 2;                /* Ensure text is on top of other content */
+    opacity: 0;                /* Start with invisible */
+    animation: fadeIn 3s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;            /* Start fully transparent */
+    }
+    to {
+        opacity: 1;            /* End fully opaque */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;     /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;       /* Further adjust font size for small screens */
+    }
+}
+
+/* Insights Section Styles */
+.insights {
+    background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+
+
+/*Footer*/
+footer {
+    background: #4CAF50; /* Same green background as the header */
+    color: white; /* White text color */
+    text-align: center; /* Center-align the text */
+    padding: 1rem 0; /* Padding for spacing */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem; /* Font size for footer text */
+}
+
+footer p {
+    margin: 0; /* Remove any default margin */
+}
+
+/* Services Section Styles */
+body {
+    background-color: #f8e9da;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* You can adjust the font family as needed */
+}
+.section-heading {
+    text-align: center; /* Center the text horizontally */
+    color: #141414; /* Keeps the existing text color */
+    margin-bottom: 5px; /* Keeps the existing margin */
+}
+/* Services Section Styles */
+.services-section {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-bottom: 12.25rem; /* Adds space below the section */
+}
+
+.services-section h2 {
+    color: #4CAF50;          /* Green color for the heading */
+    margin-bottom: 1.5rem;  /* Increased margin for better spacing */
+    font-size: 2.5rem;       /* Slightly larger font size for better visibility */
+    font-weight: bold;       /* Makes the heading bold */
+}
+
+.services-section ul {
+    list-style: none;        /* Removes default bullet points */
+    padding: 0;              /* Removes padding from the list */
+    margin: 0;               /* Removes default margin from the list */
+}
+
+.services-section li {
+    margin: 0.5rem 0;        /* Reduced margin for better spacing */
+    font-size: 1.2rem;       /* Font size for list items */
+    line-height: 1.5;        /* Increases line height for better readability */
+    color: #333;             /* Darker text color for better contrast */
+}
+
+/* Optional: Add a border or shadow for better separation */
+.services-section {
+    border-radius: 8px;      /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Login Container Styles */
+.login-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #45a049;
+}
+
+.login-container .login-form {
+    display: none;
+}
+
+.login-container .login-form.active {
+    display: block;
+}
+
+.login-container .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.login-container .tabs button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ddd;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.login-container .tabs button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#login-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Profile Section Styles */
+.profile-section {
+    width: 30%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Dealer Section Styles */
+.dealer-section {
+    width: 70%;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.dealer-profile-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dealer-profile-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dealer-profile-card .details {
+    flex-grow: 1;
+}
+
+.dealer-profile-card .view-more {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.dealer-profile-card .view-more:hover {
+    text-decoration: underline;
+}
+
+/* User Profile Section */
+.user-profile {
+    display: block;
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+    margin-bottom: auto;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Popup Container */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Close Button */
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Popup Header */
+.popup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Profile Picture */
+.popup-profile-picture {
+    margin-bottom: 20px;
+}
+
+.popup-profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Popup Details */
+.popup-details {
+    width: 100%;
+}
+
+.popup-details form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-details label {
+    margin-top: 10px;
+}
+
+.popup-details input[type="text"] {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contract-button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contract-button:hover {
+    background-color: #45a049;
+}
+.logo{
+    width: 80px;
+    background-color: #4caf50;
+    height: auto;
+    align-items: left;
+    float:left;
+    margin-right:100px;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8e9da;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f8e9da;
+    border-radius: 10px;
+    margin: 50px;
+}
+
+.contact-info {
+    max-width: 500px;
+}
+
+.contact-info h4 {
+    color: #4caf50;
+    font-weight: 400;
+}
+
+.contact-info h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.contact-animation {
+    max-width: 300px;
+}
+
+.animated-illustration {
+    width: 100%;
+    height: auto;
+    animation: wave 2s infinite;
+}
+
+/* Animation */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Full-width background video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Behind the content */
+}
+
+.background-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
+}
+
+/* Section styles */
+/* Row and card styles */
+.row {
+    display: flex; /* Use flexbox to align cards in a row */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    background-color: rgba(76, 175, 80, 0.5); /* Semi-transparent green */
+    border: 1px solid rgba(76, 175, 80, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex: 1; /* Ensure all cards have equal width */
+    max-width: 300px; /* Optional: Limit the width of each card */
+}
+
+.card i {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.hl1 {
+    height: 2px;
+    width: 60px;
+    background-color: crimson;
+    margin: 0 auto 10px auto;
+}
+
+.card-text {
+    color: black;
+}
+
+.card:hover {
+    background-color: rgba(76, 175, 80, 0.7); /* Darker semi-transparent green */
+    transform: scale(1.05);
+}

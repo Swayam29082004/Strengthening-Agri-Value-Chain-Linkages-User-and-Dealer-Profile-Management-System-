@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboards.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- User Profile Section -->
+        <div class="profile-section">
+            <h2>Welcome, {{ user_profile['full_name'] }}</h2>
+            <img src="{{ url_for('static', filename=user_profile['profile_picture']) }}" alt="Profile Picture" class="profile-pic">
+            <div class="profile-info">
+                <div class="info-item">
+                    <strong>Email:</strong>
+                    <p>{{ user_profile['email'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Phone:</strong>
+                    <p>{{ user_profile['phone'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Address:</strong>
+                    <p>{{ user_profile['address'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Farm Size:</strong>
+                    <p>{{ user_profile['farm_size'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Products Available:</strong>
+                    <p>{{ user_profile['products'] }}</p>
+                </div>
+                <div class="info-item">
+                    <strong>Rate:</strong>
+                    <p>{{ user_profile['products_rate'] }}</p>
+                </div>
+            </div>
+            <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+        </div>
+
+        <!-- Dealer Profiles Section -->
+        <div class="dealer-section">
+            <h3 class="section-title">Available Dealers</h3>
+            {% for dealer in dealers %}
+            <div class="dealer-profile-card">
+                <img src="{{ url_for('static', filename=dealer['profile_picture'] if dealer['profile_picture'] else 'uploads/default.png') }}" alt="Dealer Picture">
+                <div class="details">
+                    <p><strong>Dealer Name:</strong> {{ dealer['full_name'] }}</p>
+                    <p><strong>Organization Name:</strong> {{ dealer['organization_name'] }}</p>
+                    <p><strong>Products Interested:</strong> {{ dealer['products_interested'] }}</p>
+                    <p><strong>Products Rate:</strong> {{ dealer['products_rate'] }}</p>
+                </div><a href="#" class="view-more" data-dealer-id="{{ dealer['id'] }}">View More</a>
+
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Agriculture World. All rights reserved.</p>
+    </footer>
+
+    <!-- Popup Structure -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <div id="popup-detail-content"></div>
+            <button id="sell-button" class="sell-button">Sell</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

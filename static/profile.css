@@ -1,0 +1,81 @@
+/* profile.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center; /* Adjust to left, right, or center as needed */
+    color: #333;
+    background-color: #fff; /* Optional: to ensure it stands out */
+    margin: 0;
+    padding: 10px 0; /* Adjust padding as needed */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 210px; /* Adjust this value as needed */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="file"],
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+form input[type="file"] {
+    padding: 5px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form input:focus,
+form button:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+}

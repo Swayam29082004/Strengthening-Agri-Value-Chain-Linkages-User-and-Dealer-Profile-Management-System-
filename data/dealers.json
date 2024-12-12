@@ -1,0 +1,46 @@
+{
+    "kerkaryash": {
+        "password": "fe077a519444d7a53634a2148026c75efc21612af55af7a40e9cfc7840c0b61c",
+        "profile_type": "dealer",
+        "profile_complete": true,
+        "profile": {
+            "full_name": "KERKAR YASH",
+            "email": "KERKAR@GMAIL.COM",
+            "phone": "78945613",
+            "address": null,
+            "farm_size": null,
+            "products": null,
+            "products_rate": "150$",
+            "organization_name": "YK COMPANY",
+            "organization_address": "NALLSOPARA WEST",
+            "location": "VIRAR ",
+            "business_type": "RETAILER",
+            "products_interested": "CHILLIS",
+            "gst_no": "789+456+213",
+            "profile_picture": "uploads/testpofile.jpeg",
+            "certified_documents": "uploads/testpofile.jpeg"
+        }
+    },
+    "baripritesh": {
+        "password": "3d089053dd8a6229f5f23e56c30045786f838c1f9a4a7284844f1c6bade963b2",
+        "profile_type": "dealer",
+        "profile_complete": true,
+        "profile": {
+            "full_name": "BARI PRITESH",
+            "email": "BARI@GMAIL.COM",
+            "phone": "7875618947",
+            "address": null,
+            "farm_size": null,
+            "products": null,
+            "products_rate": "200$",
+            "organization_name": "B COMPANY",
+            "organization_address": "DAHANU",
+            "location": "GUNGWADA",
+            "business_type": "RETAILER",
+            "products_interested": "CHILLIS",
+            "gst_no": "789+456+123",
+            "profile_picture": "uploads/testpofile.jpeg",
+            "certified_documents": "uploads/testpofile.jpeg"
+        }
+    }
+}
