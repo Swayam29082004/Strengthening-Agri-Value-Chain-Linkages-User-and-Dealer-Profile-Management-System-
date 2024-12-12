@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="55x55" href="static\logos.png">
+    <title>Our Services - Agriculture Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <ul class="navbar">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('dashboard') }}">My Dashboard</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <img src="{{ url_for('static', filename='logos.png') }}" alt="Logo" class="nav-logo">
+        </nav>
+    </header>
+
+    <section id="services" class="services-section">
+        
+        <div class="background-video">
+            <video autoplay muted loop>
+                <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="container">
+            <h1 class="section-heading">Our Services</h1>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <i class="fa-solid fa-truck-field" aria-hidden="true"></i>
+                        <div class="card-body">
+                            <h4 class="card-title">Manage Supplies</h4>
+                            <div class="hl1"></div>
+                            <p class="card-text">We help you keep track of stock levels to ensure you have the right products available when needed. Avoid shortages and overstock with our efficient inventory management tools. Our services streamline the delivery process, making sure products are transported safely and arrive on time. Enjoy hassle-free logistics and reduce delays in your supply chain.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <div class="card-body">
+                            <h4 class="card-title">Access Quality Products</h4>
+                            <div class="hl1"></div>
+                            <p class="card-text">Gain direct access to a range of high-quality agricultural products from trusted dealers. We ensure that you receive the best inputs for your farming needs. Benefit from efficient delivery systems that ensure your products arrive on schedule, minimizing interruptions in your farming operations. With our support, you’ll have a steady supply of quality products.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <i class="fa-solid fa-link" aria-hidden="true"></i>
+                        <div class="card-body">
+                            <h4 class="card-title">Connect with Farmers</h4>
+                            <div class="hl1"></div>
+                            <p class="card-text">We facilitate direct connections between you and farmers, making it easier for you to offer your products and services where they are needed most. Effective Communication: Our tools streamline communication, allowing you to update farmers on new products, promotions, and important information quickly and efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 AgroUntech. All rights reserved.</p>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

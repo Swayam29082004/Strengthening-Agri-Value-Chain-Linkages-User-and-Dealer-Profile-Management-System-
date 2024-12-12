@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="55x55" href="static\logos.png">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="static\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <ul class="navbar">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('services') }}">Our Services</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('dashboard') }}">My Dashboard</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <img src="{{ url_for('static', filename='logos.png') }}" alt="Logo" class="nav-logo" id="logo-img">
+        </nav>
+    </header>
+
+    <div class="contact-section">
+        <div class="contact-info">
+            <h4>How can we help you?</h4>
+            <h1>Contact us</h1>
+            <p>We re here to help and answer any questions you might have. We look forward to hearing from you!</p
+            <p><i class="fas fa-map-marker-alt"></i>AT post near railway station,Vasai Road </p>
+            <p><i class="fa-solid fa-phone"></i></i>+91 9999999999</p>
+            <p><i class="fas fa-envelope"></i> agrountech.com</p>
+        </div>
+        <div class="contact-animation">
+            <img src="static\contact.jpeg" alt="Hello" class="animated-illustration">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 AgroUntech. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+</html>

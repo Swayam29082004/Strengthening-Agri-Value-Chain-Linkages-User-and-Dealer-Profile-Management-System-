@@ -1,0 +1,24 @@
+{
+    "bariankit": {
+        "password": "3d089053dd8a6229f5f23e56c30045786f838c1f9a4a7284844f1c6bade963b2",
+        "profile_type": "user",
+        "profile_complete": true,
+        "profile": {
+            "full_name": "BARI ANKIT",
+            "email": "ABARI@GMAIL.COM",
+            "phone": "789456132",
+            "address": "Tal. Dahanu, Dis. Palghar, Gungwada",
+            "farm_size": "2.5 ACERS",
+            "products": "CHILLIS ETC.",
+            "products_rate": "100$",
+            "organization_name": null,
+            "organization_address": null,
+            "location": null,
+            "business_type": null,
+            "products_interested": null,
+            "gst_no": null,
+            "profile_picture": "uploads/testpofile.jpeg",
+            "certified_documents": null
+        }
+    }
+}
